@@ -64,6 +64,15 @@ export class FeedComponent implements OnInit, OnDestroy {
       variables: {
         id: id,
       },
+      updateQueries: {
+        allPosts: (prev: any) => {
+          const allPosts = prev.allPosts.filter(post => post.id !== id);
+
+          return {
+            allPosts: [...allPosts]
+          };
+        }
+      }
     }).toPromise();
   }
 
