@@ -17,7 +17,7 @@ const AllPostsQuery = gql`
 `;
 
 @Component({
-  selector: 'feed',
+  selector: 'app-feed',
   template: `
     <a routerLink="/create" class="fixed bg-white top-0 right-0 pa4 ttu dim black no-underline">+ New Post</a>
     <div class="w-100" style="max-width: 400px">
@@ -64,6 +64,15 @@ export class FeedComponent implements OnInit, OnDestroy {
       variables: {
         id: id,
       },
+      updateQueries: {
+        allPosts: (prev: any) => {
+          const allPosts = prev.allPosts.filter(post => post.id !== id);
+
+          return {
+            allPosts: [...allPosts]
+          };
+        }
+      }
     }).toPromise();
   }
 
