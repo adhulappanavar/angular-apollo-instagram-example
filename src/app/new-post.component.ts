@@ -5,7 +5,7 @@ import { Angular2Apollo } from 'angular2-apollo';
 import gql from 'graphql-tag';
 
 @Component({
-  selector: 'new-post',
+  selector: 'app-new-post',
   template: `
     <div>
       <input

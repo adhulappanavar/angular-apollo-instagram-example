@@ -1,8 +1,5 @@
 import { ApolloClient, createNetworkInterface } from 'apollo-client';
 
-// Polyfill fetch
-import 'whatwg-fetch';
-
 const networkInterface = createNetworkInterface({
   uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__'
 });
@@ -20,4 +17,8 @@ networkInterface.use([{
   },
 }]);
 
-export const client = new ApolloClient({ networkInterface });
+const client = new ApolloClient({ networkInterface });
+
+export function provideClient(): ApolloClient {
+  return client;
+}
