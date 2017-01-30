@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ApolloModule } from 'angular2-apollo';
+import { ApolloModule } from 'apollo-angular';
 
 import { AppComponent } from './app.component';
 import { FeedComponent } from './feed.component';
@@ -24,7 +24,7 @@ import { provideClient } from './client';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    ApolloModule.withClient(provideClient)
+    ApolloModule.forRoot(provideClient)
   ],
   bootstrap: [ AppComponent ],
 })

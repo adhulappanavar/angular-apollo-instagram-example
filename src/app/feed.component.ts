@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Angular2Apollo } from 'angular2-apollo';
+import { Apollo } from 'apollo-angular';
 import { Subscription } from 'rxjs/Subscription';
 
 import gql from 'graphql-tag';
@@ -40,7 +40,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   allPostsSub: Subscription;
 
   constructor(
-    private apollo: Angular2Apollo
+    private apollo: Apollo
   ) {}
 
   setImage(url: string) {

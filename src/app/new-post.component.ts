@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Angular2Apollo } from 'angular2-apollo';
+import { Apollo } from 'apollo-angular';
 
 import gql from 'graphql-tag';
 
@@ -39,7 +39,7 @@ export class NewPostComponent {
 
   constructor(
     private router: Router,
-    private apollo: Angular2Apollo
+    private apollo: Apollo
   ) { }
 
   postImage(): void {
